@@ -1,0 +1,7 @@
+@mixin text($color) {
+    font: {
+      size: 4rem;
+      weight: 100;
+    }
+    color: $color;
+  }

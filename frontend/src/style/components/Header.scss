@@ -1,0 +1,16 @@
+@import "../index.scss";
+
+.logo{
+    width: 100px;
+}
+.header-warpper {
+    background-color: $color_black;
+    color: $color_white;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+}
