@@ -9,7 +9,7 @@
 }
 .header-container {
   row-gap: 2rem;
-  justify-content: space-between;
+  justify-content: space-between !important;
   padding: 1rem 1rem;
   color: $secondary;
 }

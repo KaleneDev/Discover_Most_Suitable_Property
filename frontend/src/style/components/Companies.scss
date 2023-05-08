@@ -1,0 +1,9 @@
+@import "../index.scss";
+
+.companies-container {
+  justify-content: space-between;
+  gap: 1rem;
+  img {
+    width: 9rem;
+  }
+}
