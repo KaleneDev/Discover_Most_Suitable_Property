@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -34,15 +34,28 @@ function value() {
             </span>
 
             <Accordion
-              className="acccordion"
+              className="accordion"
               allowMultipleExpanded={false}
               preExpanded={[0]}
             >
               {data.map((item, i) => {
+                const [className, setClassName] = useState(null);
+                console.log({ setClassName });
                 return (
-                  <AccordionItem className="accordionItem" key={i} uuid={i}>
+                  <AccordionItem
+                    className={`accordionItem ${className}`}
+                    key={i}
+                    uuid={i}
+                  >
                     <AccordionItemHeading>
-                      <AccordionItemButton>
+                      <AccordionItemButton className="accordionButton">
+                        <AccordionItemState>
+                          {({ expanded }) =>
+                            expanded
+                              ? setClassName("expanded")
+                              : setClassName("collapsed")
+                          }
+                        </AccordionItemState>
                         <div className="flexCenter icon">{item.icon}</div>
                         <span className="primaryText">{item.heading}</span>
                         <div className="flexCenter icon">
@@ -50,6 +63,9 @@ function value() {
                         </div>
                       </AccordionItemButton>
                     </AccordionItemHeading>
+                    <AccordionItemPanel>
+                      <p className="secondaryText">{item.detail}</p>
+                    </AccordionItemPanel>
                   </AccordionItem>
                 );
               })}
