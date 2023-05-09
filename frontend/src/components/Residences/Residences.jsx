@@ -1,6 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "Swiper/react";
+import { Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/pagination";
+
 import "../../style/components/Residences.scss";
 import data from "../../utils/slider.json";
 import { sliderSettings } from "../../utils/common";
@@ -13,8 +16,14 @@ function Residences() {
             <span className="orangeText">Meilleur choix</span>
             <span className="primaryText">Residence populaire</span>
           </div>
-          <Swiper {...sliderSettings}>
-            <sliderButton />
+          <Swiper
+            {...sliderSettings}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+          >
+            <SliderButtons />
             {data.map((card, i) => (
               <SwiperSlide key={i}>
                 <div className="r-card flexColCenter">
@@ -36,6 +45,14 @@ function Residences() {
 
 export default Residences;
 
-const SliderButton = () => {
-  return <div></div>;
+const SliderButtons = () => {
+  const swiper = useSwiper();
+  return (
+    <div>
+      <div className="r-buttons">
+        <button onClick={() => swiper.slidePrev()}>&lt;</button>
+        <button onClick={() => swiper.slideNext()}>&gt;</button>
+      </div>
+    </div>
+  );
 };

@@ -1,0 +1,31 @@
+@import "../index.scss";
+
+.value-container {
+  display: grid;
+
+  .value-left {
+    width: 100%;
+    .image-container {
+      border: 8px solid rgb(232 232 232/93%);
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  .value-right {
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+  .value-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .value-right {
+    display: flex;
+    flex-direction: column;
+  }
+}

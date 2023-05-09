@@ -56,13 +56,14 @@
 }
 .image-container {
   width: 100%;
-  height: 35rem;
+  height: 25rem;
   overflow: hidden;
   border-radius: 15rem 15rem 0 0;
   border: 8px solid rgba(255, 255, 255, 0.12);
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }
 .stat {
@@ -71,6 +72,16 @@
 .count {
   span {
     font-size: 2rem;
+  }
+}
+@media (min-width: 768px) {
+
+  .image-container {
+    height: 35rem;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 @media (min-width: 1024px) {
