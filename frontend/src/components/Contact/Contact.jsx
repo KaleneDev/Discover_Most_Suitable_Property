@@ -3,7 +3,24 @@ import "../../style/components/Contact.scss";
 import { MdCall } from "react-icons/md";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { HiChatBubbleBottomCenter } from "react-icons/hi2";
+import { motion } from "framer-motion";
+
 function Contact() {
+  const container = {
+    offscreen: {
+      x: "7rem",
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 2,
+        bounce: 0.2,
+      },
+    },
+  };
   return (
     <div>
       <section className="contact-wrapper">
@@ -76,9 +93,14 @@ function Contact() {
             </div>
           </div>
           <div className="contact-right">
-            <div className="image-container">
+            <motion.div
+              className="image-container"
+              initial="offscreen"
+              whileInView="onscreen"
+              variants={container}
+            >
               <img src="./images/contact.jpg" alt="" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
