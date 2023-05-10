@@ -11,18 +11,42 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import "../../style/components/Value.scss";
 import data from "../../utils/accordion";
+import { motion } from "framer-motion";
 
 function value() {
+  const cardVariants = {
+    offscreen: {
+      x: "-7rem",
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 2,
+        bounce: 0.2,
+      },
+    },
+  };
   return (
     <div>
       <section className="value-wrapper">
         <div className="innerWidth paddings value-container">
           {/* left side */}
-          <div className="value-left">
-            <div className="image-container">
+          <motion.div
+            className="value-left"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+            variants={cardVariants}
+          >
+            <motion.div
+              className="image-container"
+            >
               <img src="./images/value.png" alt="" />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           {/* right side */}
           <div className="value-right">
             <span className="orangeText">Notre valeur</span>

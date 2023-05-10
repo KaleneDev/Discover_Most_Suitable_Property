@@ -54,21 +54,25 @@
   }
   .contact-right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+
+    .image-container {
+      max-width: 30rem;
+    }
   }
 }
 
 @media (min-width: 768px) {
   .contact-container {
+    display: grid;
     .contact-left {
       .contactModes {
         width: 100%;
-
         .row {
           width: 100%;
           display: grid;
           justify-content: space-around;
-          grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
           .mode {
             margin: auto;
             width: 100%;

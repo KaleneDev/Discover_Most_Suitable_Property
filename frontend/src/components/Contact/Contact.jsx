@@ -8,7 +8,7 @@ function Contact() {
     <div>
       <section className="contact-wrapper">
         {/* left side */}
-        <div className="paddings innerWidth contact-container flexCenter">
+        <div className="paddings innerWidth contact-container">
           <div className="contact-left">
             <span className="orangeText">Votre Contacts</span>
             <span className="primaryText">Contactez-nous facilement</span>
