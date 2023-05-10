@@ -9,10 +9,12 @@
     .contactModes {
       margin: auto;
       margin-top: 2rem;
+      width: 100%;
       .row {
         gap: 2rem;
+        width: 100%;
         .mode {
-          width: 18rem;
+          width: 100%;
           padding: 1rem;
           border: 0.8px solid rgba(128, 128, 128, 0.143);
           border-radius: 5px;

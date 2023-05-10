@@ -5,6 +5,7 @@ import Residences from "./components/Residences/Residences";
 import Value from "./components/Value/value";
 import Contact from "./components/Contact/Contact";
 import GetStarted from "./components/GetStarted/GetStarted";
+import Footer from "./components/Footer/Footer";
 
 import "./style/app.scss";
 
@@ -21,6 +22,7 @@ function App() {
       <Value></Value>
       <Contact></Contact>
       <GetStarted></GetStarted>
+      <Footer></Footer>
     </div>
   );
 }

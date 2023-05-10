@@ -12,6 +12,7 @@
       border: 8px solid rgb(232 232 232/93%);
       max-width: 30rem;
       // margin: auto;
+      border-radius: 20px;
       img {
         object-fit: cover;
       }
@@ -21,6 +22,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-top: 1rem;
     .accordion {
       margin-top: 2rem;
       border: none;
@@ -62,6 +64,15 @@
 }
 
 @media (min-width: 768px) {
+  .value-container {
+    display: grid;
+
+    .value-left {
+      .image-container {
+        border-radius: 15rem 15rem 0 0;
+      }
+    }
+  }
 }
 @media (min-width: 1024px) {
   .value-container {

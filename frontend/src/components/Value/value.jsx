@@ -40,7 +40,6 @@ function value() {
             >
               {data.map((item, i) => {
                 const [className, setClassName] = useState(null);
-                console.log({ setClassName });
                 return (
                   <AccordionItem
                     className={`accordionItem ${className}`}

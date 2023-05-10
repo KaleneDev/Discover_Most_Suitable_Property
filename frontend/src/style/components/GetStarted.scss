@@ -1,1 +1,31 @@
 @import "../index.scss";
+
+.inner-container {
+  padding: 2rem;
+  display: grid;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #4161df;
+  border-radius: 10px;
+  border: 6px solid #5d77d6;
+  .primaryText {
+    color: white;
+    font-weight: 600;
+  }
+  .secondaryText {
+    color: rgba(255, 255, 255, 0.58);
+    text-align: center;
+  }
+  button {
+    width: 130px;
+    margin: auto;
+    background: #5a73d7;
+    border: 2px solid white;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .inner-container {
+  }
+}

@@ -1,0 +1,25 @@
+@import "../index.scss";
+
+.footer-container {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  .footer-left {
+    display: grid;
+  }
+  .footer-right {
+    display: grid;
+    .footer-menu {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}

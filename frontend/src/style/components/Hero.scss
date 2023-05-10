@@ -20,8 +20,8 @@
     z-index: 100;
     h1 {
       font-weight: 600;
-      font-size: 3.8rem;
-      line-height: 4rem;
+      font-size: 2.5rem;
+      line-height: 3rem;
     }
   }
   .orange-circle {
@@ -31,18 +31,22 @@
     background: $orange-gradient;
     border-radius: 999px;
     position: absolute;
-    right: 2%;
+    right: 25%;
     top: -10%;
     z-index: -100;
   }
 
   .search-bar {
+    display: grid;
     background-color: white;
     border-radius: 5px;
     border: 3px solid rgba(120, 120, 120, 0.374);
     padding: 0.5rem 1rem;
     justify-content: space-between;
     width: 100%;
+    grid-template-columns: 1fr 6fr 1fr;
+    justify-content: center;
+    align-items: center;
     input {
       border: none;
       outline: none;
@@ -56,7 +60,7 @@
 }
 .image-container {
   width: 100%;
-  height: 25rem;
+  height: 30rem;
   overflow: hidden;
   border-radius: 15rem 15rem 0 0;
   border: 8px solid rgba(255, 255, 255, 0.12);
@@ -75,13 +79,26 @@
   }
 }
 @media (min-width: 768px) {
-
   .image-container {
     height: 35rem;
     img {
       width: 100%;
       height: 100%;
     }
+  }
+  .hero-left {
+    display: flex;
+    gap: 3rem;
+    .hero-title {
+      h1 {
+        font-size: 3.8rem;
+        line-height: 4rem;
+      }
+    }
+  }
+  .orange-circle {
+    right: 10%;
+    top: -10%;
   }
 }
 @media (min-width: 1024px) {
