@@ -5,11 +5,15 @@
 
   .value-left {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .image-container {
       border: 8px solid rgb(232 232 232/93%);
+      max-width: 30rem;
+      // margin: auto;
       img {
         object-fit: cover;
-        width: 100%;
       }
     }
   }
@@ -61,6 +65,7 @@
 }
 @media (min-width: 1024px) {
   .value-container {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
   .value-right {

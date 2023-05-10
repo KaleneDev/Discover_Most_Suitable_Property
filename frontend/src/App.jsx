@@ -3,6 +3,8 @@ import Hero from "./components/Hero/Hero";
 import Companies from "./components/Companies/Companies";
 import Residences from "./components/Residences/Residences";
 import Value from "./components/Value/value";
+import Contact from "./components/Contact/Contact";
+import GetStarted from "./components/GetStarted/GetStarted";
 
 import "./style/app.scss";
 
@@ -17,6 +19,8 @@ function App() {
       <Companies></Companies>
       <Residences></Residences>
       <Value></Value>
+      <Contact></Contact>
+      <GetStarted></GetStarted>
     </div>
   );
 }

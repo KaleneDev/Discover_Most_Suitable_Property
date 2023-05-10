@@ -39,6 +39,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.icon {
+  padding: 10px;
+  background: #eeeeff;
+  border-radius: 5px;
+  & svg {
+    fill: var(--blue);
+  }
+}
 .paddings {
   padding: 1.5rem;
 }

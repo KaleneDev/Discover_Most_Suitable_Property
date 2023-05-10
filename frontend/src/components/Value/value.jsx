@@ -16,7 +16,7 @@ function value() {
   return (
     <div>
       <section className="value-wrapper">
-        <div className="innerWidth paddings value-container flexCenter">
+        <div className="innerWidth paddings value-container">
           {/* left side */}
           <div className="value-left">
             <div className="image-container">
