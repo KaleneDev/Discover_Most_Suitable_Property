@@ -18,7 +18,7 @@ const Hero = () => {
                 transition={{ duration: 2, type: "spring" }}
               >
                 Découvrez <br />
-                des propriétées <br /> appropriée
+                des propriétées <br /> appropriées
               </motion.h1>
             </div>
 
