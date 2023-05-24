@@ -3,7 +3,7 @@ import "../../style/components/Hero.scss";
 import { HiLocationMarker } from "react-icons/hi";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import { useIsLarge, useIsSmall } from "../../utils/useMediaQuery";
+import { useIsLarge } from "../../utils/useMediaQuery";
 
 const Hero = () => {
     const isLarge = useIsLarge();
@@ -13,6 +13,7 @@ const Hero = () => {
     const containerLtoR = {
         offscreen: {
             x: "-7rem",
+            y: 0,
             opacity: 0,
         },
         onscreen: {
@@ -27,6 +28,7 @@ const Hero = () => {
             },
         },
         offscreenMobile: {
+            x: 0,
             y: "7rem",
             opacity: 0,
         },
@@ -45,6 +47,7 @@ const Hero = () => {
     const containerRtoL = {
         offscreen: {
             x: "7rem",
+            y: 0,
             opacity: 0,
         },
         onscreen: {
@@ -59,6 +62,7 @@ const Hero = () => {
             },
         },
         offscreenMobile: {
+            x: 0,
             y: "7rem",
             opacity: 0,
         },
