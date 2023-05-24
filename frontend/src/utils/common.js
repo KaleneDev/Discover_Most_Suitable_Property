@@ -1,5 +1,3 @@
-
-
 export const sliderSettings = {
   slidesPerView: 1,
   spaceBetween: 20,

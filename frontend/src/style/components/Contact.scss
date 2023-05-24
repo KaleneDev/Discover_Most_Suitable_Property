@@ -1,90 +1,97 @@
 @import "../index.scss";
 
 .contact-container {
-  display: grid;
-
-  .contact-left {
     display: grid;
-    gap: 0.5rem;
-    .contactModes {
-      margin: auto;
-      margin-top: 2rem;
-      width: 100%;
-      .row {
-        gap: 2rem;
-        width: 100%;
-        .mode {
-          width: 100%;
-          padding: 1rem;
-          border: 0.8px solid rgba(128, 128, 128, 0.143);
-          border-radius: 5px;
-          gap: 1rem;
-          transition: all 300ms ease-in;
-          &:hover {
-            scale: 1.1;
-            box-shadow: var(--shadow);
-          }
-          .block {
-            width: 100%;
-            gap: 1rem;
-          }
-          .detail {
+
+    .contact-left {
+        display: grid;
+        gap: 0.5rem;
+        & > div:nth-child(1) {
             display: flex;
             flex-direction: column;
-            .primaryText {
-              font-size: 1.1rem;
-              font-weight: 600;
-            }
-          }
-          & .button {
-            width: 100%;
-            background: var(--lightBlue);
-            color: var(--blue);
-            font-size: 0.9rem;
-            font-weight: 600;
-          }
-          & .button:hover {
-            background: var(--blue-gradient);
-            color: white;
-            scale: 0.8;
-          }
+            gap: 1rem;
         }
-      }
-    }
-  }
-  .contact-right {
-    display: flex;
-    justify-content: center;
+        .contactModes {
+            margin: auto;
+            margin-top: 2rem;
+            width: 100%;
 
-    .image-container {
-      max-width: 30rem;
+            display: grid;
+            justify-content: space-around;
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+            gap: 1rem;
+
+            .mode {
+                width: 100%;
+                padding: 1rem;
+                border: 0.8px solid rgba(128, 128, 128, 0.143);
+                border-radius: 5px;
+                gap: 1rem;
+                transition: all 300ms ease-in;
+                &:hover {
+                    scale: 1.1;
+                    box-shadow: var(--shadow);
+                }
+                .block {
+                    width: 100%;
+                    gap: 1rem;
+                }
+                .detail {
+                    display: flex;
+                    flex-direction: column;
+                    .primaryText {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+                }
+                & .button {
+                    width: 100%;
+                    background: var(--lightBlue);
+                    color: var(--blue);
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+                & .button:hover {
+                    background: var(--blue-gradient);
+                    color: white;
+                    scale: 0.8;
+                }
+            }
+        }
     }
-  }
+    .contact-right {
+        display: flex;
+        justify-content: center;
+
+        .image-container {
+            max-width: 30rem;
+        }
+    }
 }
 
 @media (min-width: 768px) {
-  .contact-container {
-    display: grid;
-    .contact-left {
-      .contactModes {
-        width: 100%;
-        .row {
-          width: 100%;
-          display: grid;
-          justify-content: space-around;
-          grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
-          .mode {
-            margin: auto;
-            width: 100%;
-          }
+    .contact-container {
+        display: grid;
+        .contact-left {
+            .contactModes {
+                width: 100%;
+                .row {
+                    width: 100%;
+                    display: grid;
+                    justify-content: space-around;
+                    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+                    .mode {
+                        margin: auto;
+                        width: 100%;
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
 @media (min-width: 1024px) {
-  .contact-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
