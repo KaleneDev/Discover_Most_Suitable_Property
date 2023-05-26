@@ -17,6 +17,7 @@ function Residences() {
     const containerLtoR = {
         offscreen: {
             x: "-7rem",
+            y: 0,
             opacity: 0,
         },
         onscreen: {
@@ -31,6 +32,7 @@ function Residences() {
             },
         },
         offscreenMobile: {
+            x: 0,
             y: "7rem",
             opacity: 0,
         },
@@ -129,7 +131,7 @@ function Residences() {
                                     <motion.div
                                         className="r-card flexColCenter"
                                         initial={responsiveOffscreen}
-                                        whileInView={responsiveOnscreen}
+                                        animate={responsiveOnscreen}
                                         variants={containerLtoR}
                                     >
                                         <img src={card.image} alt="" />

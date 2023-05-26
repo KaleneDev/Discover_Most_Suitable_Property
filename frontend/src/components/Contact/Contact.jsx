@@ -13,6 +13,7 @@ function Contact() {
     const containerLtoR = {
         offscreen: {
             x: "-7rem",
+            y: 0,
             opacity: 0,
         },
         onscreen: {
@@ -27,6 +28,7 @@ function Contact() {
             },
         },
         offscreenMobile: {
+            x: 0,
             y: "7rem",
             opacity: 0,
         },
@@ -69,9 +71,9 @@ function Contact() {
             y: 0,
             opacity: 1,
             transition: {
-                staggerChildren: 0.35,
+                staggerChildren: 0.15,
                 type: "spring",
-                duration: 2,
+                duration: 1,
                 bounce: 0.2,
             },
         },
