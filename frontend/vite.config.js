@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [react()],
     build: {
         rollupOptions: {
-            external: ["swiper/react"],
+            external: ["node_modules/swiper/react"],
         },
     },
     base: "./",
