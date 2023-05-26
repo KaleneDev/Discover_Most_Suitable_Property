@@ -48,38 +48,6 @@ function Residences() {
             },
         },
     };
-    const containerRtoL = {
-        offscreen: {
-            x: "7rem",
-            opacity: 0,
-        },
-        onscreen: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-        offscreenMobile: {
-            y: "7rem",
-            opacity: 0,
-        },
-        onscreenMobile: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-    };
     const isLarge = useIsLarge();
 
     useEffect(() => {
