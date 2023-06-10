@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "../../style/components/Residences.scss";
 import data from "../../utils/slider.json";
 import { sliderSettings } from "../../utils/common";
+import { slider } from "../../utils/slider.js";
 
 import { motion } from "framer-motion";
 import { useIsLarge } from "../../utils/useMediaQuery";
@@ -13,6 +14,7 @@ function Residences() {
     const [responsiveOnscreen, setResponsiveOnscreen] = useState(null);
     const [responsiveOffscreen, setResponsiveOffscreen] = useState(null);
     const [show, setShow] = useState(false);
+    const [text, setText] = useState(null);
 
     const containerLtoR = {
         offscreen: {
@@ -61,6 +63,10 @@ function Residences() {
             setShow(true);
         }
     }, [isLarge]);
+
+    useEffect(() => {
+        slider(300);
+    }, []);
     return (
         <div>
             {show && (
@@ -86,6 +92,29 @@ function Residences() {
                             </motion.span>
                         </motion.div>
 
+                        <div className="slider">
+                            <div className="slides">
+                                {data.map((card, i) => (
+                                    <div className="slide" key={i}>
+                                        <img src={card.image} alt="" />
+                                        <span className="secondaryText r-price">
+                                            <span>$</span>{" "}
+                                            <span>{card.price}</span>
+                                        </span>
+                                        <span className="primaryText">
+                                            {card.name}
+                                        </span>
+                                        <span className="secondaryText">
+                                            {card.detail}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="container__btn">
+                            <button className="prev-btn">&lt;</button>
+                            <button className="next-btn">&gt;</button>
+                        </div>
                         <Swiper
                             {...sliderSettings}
                             pagination={{
