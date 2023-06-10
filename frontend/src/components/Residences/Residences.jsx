@@ -92,8 +92,13 @@ function Residences() {
                             </motion.span>
                         </motion.div>
 
-                        <div className="slider">
-                            <div className="slides">
+                        <motion.div className="slider">
+                            <motion.div
+                                className="slides"
+                                initial={responsiveOffscreen}
+                                whileInView={responsiveOnscreen}
+                                variants={containerLtoR}
+                            >
                                 {data.map((card, i) => (
                                     <div className="slide" key={i}>
                                         <img src={card.image} alt="" />
@@ -109,8 +114,8 @@ function Residences() {
                                         </span>
                                     </div>
                                 ))}
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                         <div className="container__btn">
                             <button className="prev-btn">&lt;</button>
                             <button className="next-btn">&gt;</button>

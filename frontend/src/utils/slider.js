@@ -19,12 +19,12 @@ const slider = (minWidth) => {
 
         const slideWidthUp = () => {
             slides.forEach((slide) => {
-                slide.style.maxWidth = `${newSlideWidth - 64}px`;
+                slide.style.maxWidth = `${newSlideWidth}px`;
             });
         };
         slideWidthUp();
         window.addEventListener("resize", function () {
-            slidesContainer[i].style.transitionDuration = `0`;
+            slidesContainer[i].style.transitionDuration = "0s";
             console.log(slidesContainer[i]);
             largeurEcran = slidesContainer[i].offsetWidth;
             numberOfSlidesOnScreen = Math.floor(largeurEcran / minWidth);
