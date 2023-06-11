@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Swiper, SwiperSlide, useSwiper } from "/node_modules/swiper/react";
-import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../../style/components/Residences.scss";
 import data from "../../utils/slider.json";
-import { sliderSettings } from "../../utils/common";
 import { slider } from "../../utils/slider.js";
 
 import { motion } from "framer-motion";
 import { useIsLarge } from "../../utils/useMediaQuery";
+
 function Residences() {
     const [responsiveOnscreen, setResponsiveOnscreen] = useState(null);
     const [responsiveOffscreen, setResponsiveOffscreen] = useState(null);
     const [show, setShow] = useState(false);
-    const [text, setText] = useState(null);
 
     const containerLtoR = {
         offscreen: {
@@ -53,6 +50,9 @@ function Residences() {
     const isLarge = useIsLarge();
 
     useEffect(() => {
+        setTimeout(() => {
+            slider(300);
+        }, 0);
         if (isLarge) {
             setResponsiveOnscreen("onscreen");
             setResponsiveOffscreen("offscreen");
@@ -64,9 +64,7 @@ function Residences() {
         }
     }, [isLarge]);
 
-    useEffect(() => {
-        slider(300);
-    }, []);
+    useEffect(() => {}, []);
     return (
         <div>
             {show && (
@@ -91,66 +89,37 @@ function Residences() {
                                 Residence populaire
                             </motion.span>
                         </motion.div>
-
-                        <motion.div className="slider">
+                        <div>
                             <motion.div
-                                className="slides"
+                                className="slider"
                                 initial={responsiveOffscreen}
                                 whileInView={responsiveOnscreen}
                                 variants={containerLtoR}
                             >
-                                {data.map((card, i) => (
-                                    <div className="slide" key={i}>
-                                        <img src={card.image} alt="" />
-                                        <span className="secondaryText r-price">
-                                            <span>$</span>{" "}
-                                            <span>{card.price}</span>
-                                        </span>
-                                        <span className="primaryText">
-                                            {card.name}
-                                        </span>
-                                        <span className="secondaryText">
-                                            {card.detail}
-                                        </span>
-                                    </div>
-                                ))}
+                                <div className="slides">
+                                    {data.map((card, i) => (
+                                        <div className="slide" key={i}>
+                                            <img src={card.image} alt="" />
+                                            <span className="secondaryText r-price">
+                                                <span>$</span>{" "}
+                                                <span>{card.price}</span>
+                                            </span>
+                                            <span className="primaryText">
+                                                {card.name}
+                                            </span>
+                                            <span className="secondaryText">
+                                                {card.detail}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
                             </motion.div>
-                        </motion.div>
-                        <div className="container__btn">
-                            <button className="prev-btn">&lt;</button>
-                            <button className="next-btn">&gt;</button>
+
+                            <div className="container__btn">
+                                <button className="prev-btn">&lt;</button>
+                                <button className="next-btn">&gt;</button>
+                            </div>
                         </div>
-                        <Swiper
-                            {...sliderSettings}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            modules={[Pagination]}
-                        >
-                            <SliderButtons />
-                            {data.map((card, i) => (
-                                <SwiperSlide key={i}>
-                                    <motion.div
-                                        className="r-card flexColCenter"
-                                        initial={responsiveOffscreen}
-                                        animate={responsiveOnscreen}
-                                        variants={containerLtoR}
-                                    >
-                                        <img src={card.image} alt="" />
-                                        <span className="secondaryText r-price">
-                                            <span>$</span>{" "}
-                                            <span>{card.price}</span>
-                                        </span>
-                                        <span className="primaryText">
-                                            {card.name}
-                                        </span>
-                                        <span className="secondaryText">
-                                            {card.detail}
-                                        </span>
-                                    </motion.div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
                     </div>
                 </section>
             )}
@@ -159,15 +128,3 @@ function Residences() {
 }
 
 export default Residences;
-
-const SliderButtons = () => {
-    const swiper = useSwiper();
-    return (
-        <div>
-            <div className="r-buttons">
-                <button onClick={() => swiper.slidePrev()}>&lt;</button>
-                <button onClick={() => swiper.slideNext()}>&gt;</button>
-            </div>
-        </div>
-    );
-};

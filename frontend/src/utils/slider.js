@@ -2,7 +2,7 @@ const slider = (minWidth) => {
     // Récupérer les éléments du DOM
     const slidesContainer = document.querySelectorAll(".slides");
     const slides = Array.from(document.querySelectorAll(".slide"));
-
+ 
     for (let i = 0; i < slidesContainer.length; i++) {
         slidesContainer[i].classList.add(`slides-${i}`);
 
@@ -25,7 +25,6 @@ const slider = (minWidth) => {
         slideWidthUp();
         window.addEventListener("resize", function () {
             slidesContainer[i].style.transitionDuration = "0s";
-            console.log(slidesContainer[i]);
             largeurEcran = slidesContainer[i].offsetWidth;
             numberOfSlidesOnScreen = Math.floor(largeurEcran / minWidth);
             if (largeurEcran % minWidth !== 0) {
@@ -47,7 +46,7 @@ const slider = (minWidth) => {
 
         // Fonction pour afficher le slide suivant
         function nextSlide() {
-            slidesContainer[i].style.transitionDuration = `0.35s`;
+            slidesContainer[i].style.transitionDuration = `0.25s`;
             currentIndex++;
             if (
                 currentIndex + numberOfSlidesOnScreen - 1 ===
@@ -60,7 +59,7 @@ const slider = (minWidth) => {
 
         // Fonction pour afficher le slide précédent
         function prevSlide() {
-            slidesContainer[i].style.transitionDuration = `0.35s`;
+            slidesContainer[i].style.transitionDuration = `0.25s`;
             currentIndex--;
             console.log(currentIndex);
             if (currentIndex < 0) {
