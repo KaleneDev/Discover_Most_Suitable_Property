@@ -23,7 +23,7 @@ The user interface is designed to be intuitive and user-friendly, providing a se
 
 # Technologies Used
 The Discover_Most_Suitable_Property project utilizes the following technologies:
-- vite: Frontend Tooling
+- Vite: Frontend Tooling
 - React: JavaScript library for building user interfaces.
 - HTML5 and CSS3: Markup and styling of the project.
 - JavaScript: Logic and interactivity of the application.
