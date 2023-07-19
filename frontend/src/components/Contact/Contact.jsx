@@ -32,19 +32,27 @@ function Contact() {
                     <div className="paddings innerWidth contact-container">
                         <div className="contact-left">
                             <div>
-                                <SlideInFromLeft scroll="off">
+                                <SlideInFromLeft scroll="off" duration={1.5}>
                                     <span className="orangeText">
                                         Votre Contact
                                     </span>
                                 </SlideInFromLeft>
 
-                                <SlideInFromLeft scroll="off" delay={0.25}>
+                                <SlideInFromLeft
+                                    scroll="off"
+                                    delay={0.25}
+                                    duration={1.5}
+                                >
                                     <span className="primaryText">
                                         Contactez-nous facilement
                                     </span>
                                 </SlideInFromLeft>
 
-                                <SlideInFromLeft scroll="off" delay={0.5}>
+                                <SlideInFromLeft
+                                    scroll="off"
+                                    delay={0.5}
+                                    duration={1.5}
+                                >
                                     <span>
                                         Nous sommes toujours prêts à aider en
                                         fournissant le meilleur service, nous
@@ -56,7 +64,7 @@ function Contact() {
 
                             <div className="flexColStart contactModes">
                                 {/* first row */}
-                                <SlideInFromLeft scroll="off">
+                                <SlideInFromLeft scroll="off" duration={1.5}>
                                     <div className="flexColCenter mode">
                                         <div className="flexStart block">
                                             <div className="flexCenter icon">
@@ -76,7 +84,7 @@ function Contact() {
                                 </SlideInFromLeft>
 
                                 {/* second mode*/}
-                                <SlideInFromRight scroll="off">
+                                <SlideInFromRight scroll="off" duration={1.5}>
                                     <div className="flexColCenter mode">
                                         <div className="flexStart block">
                                             <div className="flexCenter icon">
@@ -96,7 +104,7 @@ function Contact() {
                                 </SlideInFromRight>
 
                                 {/* third mode*/}
-                                <SlideInFromLeft scroll="off">
+                                <SlideInFromLeft scroll="off" duration={1.5}>
                                     <div className="flexColCenter mode">
                                         <div className="flexStart block">
                                             <div className="flexCenter icon">
@@ -116,7 +124,7 @@ function Contact() {
                                 </SlideInFromLeft>
 
                                 {/* fourth mode*/}
-                                <SlideInFromRight scroll="off">
+                                <SlideInFromRight scroll="off" duration={1.5}>
                                     <div className="flexColCenter mode">
                                         <div className="flexStart block">
                                             <div className="flexCenter icon">
@@ -139,7 +147,7 @@ function Contact() {
                             </div>
                         </div>
                         <div className="contact-right">
-                            <SlideInFromRight scroll="off">
+                            <SlideInFromRight scroll="off" duration={1.5}>
                                 <div className="image-container">
                                     <img src="./images/contact.jpg" alt="" />
                                 </div>

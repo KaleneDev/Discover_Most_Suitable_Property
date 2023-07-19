@@ -93,7 +93,7 @@ const Footer = () => {
             {show && (
                 <section className="footer-wrapper">
                     <div className="paddings innerWidth footer-container">
-                        <SlideInFromLeft scroll="off">
+                        <SlideInFromLeft scroll="off" duration={1.5}>
                             <div className="footer-left">
                                 <img
                                     src="./images/logo2.png"
@@ -108,7 +108,7 @@ const Footer = () => {
                             </div>
                         </SlideInFromLeft>
 
-                        <SlideInFromRight scroll="off">
+                        <SlideInFromRight scroll="off" duration={1.5}>
                             <div
                                 className="footer-right"
                                 initial={responsiveOffscreen}

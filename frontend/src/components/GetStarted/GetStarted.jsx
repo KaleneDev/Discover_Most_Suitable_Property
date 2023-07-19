@@ -66,14 +66,14 @@ function GetStarted() {
                                     Commencer avec Homyz
                                 </span>
                             </SlideInFromBot>
-                            <SlideInFromBot scroll="off" delay="0.3">
+                            <SlideInFromBot scroll="off" delay="0.25" duration={1.5}>
                                 <span className="secondaryText">
                                     Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit. <br />
                                     Trouver votre résidence maintenant
                                 </span>
                             </SlideInFromBot>
-                            <SlideInFromBot scroll="off" delay="0.6">
+                            <SlideInFromBot scroll="off" delay="0.5" duration={1.5}>
                                 <div className="button__container">
                                     <button className="button">
                                         <a href="mailto:apiou.kalene@gmail.com">

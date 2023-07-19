@@ -37,13 +37,17 @@ function Residences() {
                 <section className="residences-wrapper">
                     <div className="paddings innerWidth residences-container">
                         <div className="residences-head flexColStart">
-                            <SlideInFromBot scroll="off">
+                            <SlideInFromBot scroll="off" duration={1.5}>
                                 <span className="orangeText">
                                     Meilleur choix
                                 </span>
                             </SlideInFromBot>
 
-                            <SlideInFromBot scroll="off" delay="0.3">
+                            <SlideInFromBot
+                                scroll="off"
+                                delay="0.3"
+                                duration={1.5}
+                            >
                                 <span className="primaryText">
                                     Residence populaire
                                 </span>
@@ -51,7 +55,7 @@ function Residences() {
                         </div>
                         <div>
                             <div className="slider">
-                                <SlideInFromBot scroll="off">
+                                <SlideInFromBot scroll="off" duration={1.5}>
                                     <div className="slides">
                                         {data.map((card, i) => (
                                             <div className="slide" key={i}>
@@ -71,11 +75,16 @@ function Residences() {
                                     </div>
                                 </SlideInFromBot>
                             </div>
-
-                            <div className="container__btn">
-                                <button className="prev-btn">&lt;</button>
-                                <button className="next-btn">&gt;</button>
-                            </div>
+                            <SlideInFromBot
+                                scroll="off"
+                                delay="0.3"
+                                duration={1.5}
+                            >
+                                <div className="container__btn">
+                                    <button className="prev-btn">&lt;</button>
+                                    <button className="next-btn">&gt;</button>
+                                </div>
+                            </SlideInFromBot>
                         </div>
                     </div>
                 </section>
