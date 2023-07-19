@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../style/components/GetStarted.scss";
 import { motion } from "framer-motion";
 import { useIsLarge } from "../../utils/useMediaQuery";
+import { SlideInFromBot } from "../../utils/AnimationText";
 
 function GetStarted() {
     const isLarge = useIsLarge();
@@ -59,37 +60,29 @@ function GetStarted() {
             {show && (
                 <section className="getStarted-wrapper">
                     <div className="paddings innerWidth getStarted-container">
-                        <motion.div
-                            className="inner-container"
-                            initial={responsiveOffscreen}
-                            whileInView={responsiveOnscreen}
-                            variants={containerBtoT}
-                        >
-                            <motion.span
-                                className="primaryText"
-                                variants={containerBtoT}
-                            >
-                                Commencer avec Homyz
-                            </motion.span>
-                            <motion.span
-                                className="secondaryText"
-                                variants={containerBtoT}
-                            >
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. <br />
-                                Trouver votre résidence maintenant
-                            </motion.span>
-                            <motion.div
-                                className="button__container"
-                                variants={containerBtoT}
-                            >
-                                <button className="button">
-                                    <motion.a href="mailto:apiou.kalene@gmail.com">
-                                        Commencer
-                                    </motion.a>
-                                </button>
-                            </motion.div>
-                        </motion.div>
+                        <div className="inner-container">
+                            <SlideInFromBot scroll="off">
+                                <span className="primaryText">
+                                    Commencer avec Homyz
+                                </span>
+                            </SlideInFromBot>
+                            <SlideInFromBot scroll="off" delay="0.3">
+                                <span className="secondaryText">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. <br />
+                                    Trouver votre résidence maintenant
+                                </span>
+                            </SlideInFromBot>
+                            <SlideInFromBot scroll="off" delay="0.6">
+                                <div className="button__container">
+                                    <button className="button">
+                                        <a href="mailto:apiou.kalene@gmail.com">
+                                            Commencer
+                                        </a>
+                                    </button>
+                                </div>
+                            </SlideInFromBot>
+                        </div>
                     </div>
                 </section>
             )}

@@ -13,6 +13,8 @@ import "../../style/components/Value.scss";
 import data from "../../utils/accordion";
 import { motion } from "framer-motion";
 import { useIsLarge } from "../../utils/useMediaQuery";
+import { SlideInFromRight, SlideInFromLeft } from "../../utils/AnimationText";
+
 const value = () => {
     const [className, setClassName] = useState(null);
 
@@ -20,72 +22,6 @@ const value = () => {
     const [responsiveOffscreen, setResponsiveOffscreen] = useState(null);
     const [show, setShow] = useState(false);
 
-    const containerLtoR = {
-        offscreen: {
-            x: "-7rem",
-            opacity: 0,
-        },
-        onscreen: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-        offscreenMobile: {
-            y: "7rem",
-            opacity: 0,
-        },
-        onscreenMobile: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-    };
-    const containerRtoL = {
-        offscreen: {
-            x: "7rem",
-            y: 0,
-            opacity: 0,
-        },
-        onscreen: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-        offscreenMobile: {
-            x: 0,
-            y: "7rem",
-            opacity: 0,
-        },
-        onscreenMobile: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-    };
     const isLarge = useIsLarge();
 
     useEffect(() => {
@@ -94,7 +30,7 @@ const value = () => {
             setResponsiveOffscreen("offscreen");
             setShow(true);
             console.log("large");
-        } else if (!isLarge && isLarge !== null)  {
+        } else if (!isLarge && isLarge !== null) {
             setResponsiveOnscreen("onscreenMobile");
             setResponsiveOffscreen("offscreenMobile");
             setShow(true);
@@ -108,51 +44,45 @@ const value = () => {
                     <div className="innerWidth paddings value-container">
                         {/* left side */}
                         <div className="value-left">
-                            <motion.div
-                                className="image-container"
-                                initial={responsiveOffscreen}
-                                whileInView={responsiveOnscreen}
-                                variants={containerLtoR}
-                            >
-                                <img src="./images/value.png" alt="" />
-                            </motion.div>
+                            <SlideInFromLeft scroll="off" duration={1.5}>
+                                <div className="image-container">
+                                    <img src="./images/value.png" alt="" />
+                                </div>
+                            </SlideInFromLeft>
                         </div>
                         {/* right side */}
                         <div className="value-right">
-                            <motion.div
-                                initial={responsiveOffscreen}
-                                whileInView={responsiveOnscreen}
-                                variants={containerRtoL}
-                            >
-                                <motion.span
-                                    variants={containerRtoL}
-                                    className="orangeText"
+                            <div>
+                                <SlideInFromRight scroll="off" duration={1.5}>
+                                    <motion.span className="orangeText">
+                                        Notre valeur
+                                    </motion.span>
+                                </SlideInFromRight>
+                                <SlideInFromRight
+                                    scroll="off"
+                                    duration={1.5}
+                                    delay={0.25}
                                 >
-                                    Notre valeur
-                                </motion.span>
-                                <motion.span
-                                    variants={containerRtoL}
-                                    className="primaryText"
+                                    <span className="primaryText">
+                                        Valeur que nous vous donnons
+                                    </span>
+                                </SlideInFromRight>
+                                <SlideInFromRight
+                                    scroll="off"
+                                    duration={1.5}
+                                    delay={0.5}
                                 >
-                                    Valeur que nous vous donnons
-                                </motion.span>
-                                <motion.span
-                                    variants={containerRtoL}
-                                    className="secondaryText"
-                                >
-                                    Nous sommes toujours prêts à vous aider en
-                                    vous fournissant les meilleurs services
-                                    possibles <br />
-                                    Nous pensons qu'un bon logement peut
-                                    améliorer votre vie
-                                </motion.span>
-                            </motion.div>
+                                    <span className="secondaryText">
+                                        Nous sommes toujours prêts à vous aider
+                                        en vous fournissant les meilleurs
+                                        services possibles <br />
+                                        Nous pensons qu'un bon logement peut
+                                        améliorer votre vie
+                                    </span>
+                                </SlideInFromRight>
+                            </div>
 
-                            <motion.div
-                                initial={responsiveOffscreen}
-                                whileInView={responsiveOnscreen}
-                                variants={containerRtoL}
-                            >
+                            <div>
                                 <Accordion
                                     className="accordion"
                                     allowMultipleExpanded={false}
@@ -160,48 +90,42 @@ const value = () => {
                                 >
                                     {data.map((item, i) => {
                                         return (
-                                            <AccordionItem
-                                                className={`accordionItem ${className}`}
-                                                key={i}
-                                                uuid={i}
+                                            <SlideInFromRight
+                                                scroll="off"
+                                                duration={1.5}
+                                                delay={1 * (i * 0.25)}
                                             >
-                                                <AccordionItemHeading>
-                                                    <AccordionItemButton className="accordionButton">
-                                                        {/* <AccordionItemState>
-                                    {({ expanded }) =>
-                                        expanded
-                                            ? setClassName(
-                                                  "expanded"
-                                              )
-                                            : setClassName(
-                                                  "collapsed"
-                                              )
-                                    }
-                                </AccordionItemState> */}
-
-                                                        <div className="flexCenter icon">
-                                                            {item.icon}
-                                                        </div>
-                                                        <span className="primaryText">
-                                                            {item.heading}
-                                                        </span>
-                                                        <div className="flexCenter icon">
-                                                            <MdOutlineArrowDropDown
-                                                                size={20}
-                                                            />
-                                                        </div>
-                                                    </AccordionItemButton>
-                                                </AccordionItemHeading>
-                                                <AccordionItemPanel>
-                                                    <p className="secondaryText">
-                                                        {item.detail}
-                                                    </p>
-                                                </AccordionItemPanel>
-                                            </AccordionItem>
+                                                <AccordionItem
+                                                    className={`accordionItem ${className}`}
+                                                    key={i}
+                                                    uuid={i}
+                                                >
+                                                    <AccordionItemHeading>
+                                                        <AccordionItemButton className="accordionButton">
+                                                            <div className="flexCenter icon">
+                                                                {item.icon}
+                                                            </div>
+                                                            <span className="primaryText">
+                                                                {item.heading}
+                                                            </span>
+                                                            <div className="flexCenter icon">
+                                                                <MdOutlineArrowDropDown
+                                                                    size={20}
+                                                                />
+                                                            </div>
+                                                        </AccordionItemButton>
+                                                    </AccordionItemHeading>
+                                                    <AccordionItemPanel>
+                                                        <p className="secondaryText">
+                                                            {item.detail}
+                                                        </p>
+                                                    </AccordionItemPanel>
+                                                </AccordionItem>
+                                            </SlideInFromRight>
                                         );
                                     })}
                                 </Accordion>
-                            </motion.div>
+                            </div>
                         </div>
                     </div>
                 </section>

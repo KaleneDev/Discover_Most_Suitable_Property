@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../style/components/Companies.scss";
 import { motion } from "framer-motion";
 import { useIsLarge } from "../../utils/useMediaQuery";
+import { SlideInFromBot } from "../../utils/AnimationText";
 
 function Companies() {
     const [responsiveOnscreen, setResponsiveOnscreen] = useState("onscreen");
@@ -56,35 +57,37 @@ function Companies() {
         <div>
             {show && (
                 <section className="companies-wrapper">
-                    <motion.div
-                        className="paddings innerWidth flexCenter companies-container"
-                        initial={responsiveOffscreen}
-                        whileInView={responsiveOnscreen}
-                        variants={containerLtoR}
-                    >
-                        <motion.img
+                    <SlideInFromBot scroll="off">
+                        <div
+                            className="paddings innerWidth flexCenter companies-container"
+                            initial={responsiveOffscreen}
+                            whileInView={responsiveOnscreen}
                             variants={containerLtoR}
-                            src="./images/prologis.png"
-                            alt=""
-                        />
+                        >
+                            <motion.img
+                                variants={containerLtoR}
+                                src="./images/prologis.png"
+                                alt=""
+                            />
 
-                        <motion.img
-                            variants={containerLtoR}
-                            src="./images/tower.png"
-                            alt=""
-                        />
+                            <motion.img
+                                variants={containerLtoR}
+                                src="./images/tower.png"
+                                alt=""
+                            />
 
-                        <motion.img
-                            variants={containerLtoR}
-                            src="./images/equinix.png"
-                            alt=""
-                        />
-                        <motion.img
-                            variants={containerLtoR}
-                            src="./images/realty.png"
-                            alt=""
-                        />
-                    </motion.div>
+                            <motion.img
+                                variants={containerLtoR}
+                                src="./images/equinix.png"
+                                alt=""
+                            />
+                            <motion.img
+                                variants={containerLtoR}
+                                src="./images/realty.png"
+                                alt=""
+                            />
+                        </div>
+                    </SlideInFromBot>
                 </section>
             )}
         </div>

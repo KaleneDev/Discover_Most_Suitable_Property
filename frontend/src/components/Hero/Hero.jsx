@@ -4,80 +4,13 @@ import { HiLocationMarker } from "react-icons/hi";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import { useIsLarge } from "../../utils/useMediaQuery";
-
+import { SlideInFromRight, SlideInFromLeft } from "../../utils/AnimationText";
 const Hero = () => {
     const isLarge = useIsLarge();
     const [responsiveOnscreen, setResponsiveOnscreen] = useState(null);
     const [responsiveOffscreen, setResponsiveOffscreen] = useState(null);
     const [show, setShow] = useState(false);
-    const containerLtoR = {
-        offscreen: {
-            x: "-7rem",
-            y: 0,
-            opacity: 0,
-        },
-        onscreen: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-        offscreenMobile: {
-            x: 0,
-            y: "7rem",
-            opacity: 0,
-        },
-        onscreenMobile: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-    };
-    const containerRtoL = {
-        offscreen: {
-            x: "7rem",
-            y: 0,
-            opacity: 0,
-        },
-        onscreen: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-        offscreenMobile: {
-            x: 0,
-            y: "7rem",
-            opacity: 0,
-        },
-        onscreenMobile: {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.35,
-                type: "spring",
-                duration: 2,
-                bounce: 0.2,
-            },
-        },
-    };
+
     useEffect(() => {
         if (isLarge) {
             setResponsiveOnscreen("onscreen");
@@ -90,119 +23,108 @@ const Hero = () => {
         }
     }, [isLarge]);
     return (
-        <div>
+        <>
             {show && (
                 <section className="hero-wrapper">
                     <div className="paddings innerWidth hero-container">
                         {/* side left */}
                         <div className="flexColStart hero-left">
                             <div className="hero-title">
-                                <motion.span
-                                    className="orange-circle"
-                                    initial={responsiveOffscreen}
-                                    whileInView={responsiveOnscreen}
-                                    variants={containerLtoR}
-                                ></motion.span>
-                                <motion.h1
-                                    initial={responsiveOffscreen}
-                                    whileInView={responsiveOnscreen}
-                                    variants={containerLtoR}
-                                >
-                                    Découvrez <br />
-                                    des propriétées <br /> appropriées
-                                </motion.h1>
+                                <SlideInFromLeft scroll="on">
+                                    <span className="orange-circle"></span>
+                                </SlideInFromLeft>
+                                <SlideInFromLeft scroll="on">
+                                    <h1>
+                                        Découvrez <br />
+                                        des propriétées <br /> appropriées
+                                    </h1>
+                                </SlideInFromLeft>
                             </div>
-
-                            <motion.div
-                                className="hero-des flexColStart"
-                                initial={responsiveOffscreen}
-                                whileInView={responsiveOnscreen}
-                                variants={containerLtoR}
-                            >
-                                <span className="secondaryText">
-                                    Trouvez très facilement une variété de biens
-                                    immobiliers qui vous conviennent
-                                </span>
-                                <span className="secondaryText">
-                                    Oubliez toutes les difficultés liées à la
-                                    recherche d'une résidence pour vous
-                                </span>
-                            </motion.div>
-
-                            <motion.div
-                                className="search-bar"
-                                initial={responsiveOffscreen}
-                                whileInView={responsiveOnscreen}
-                                variants={containerLtoR}
-                            >
-                                <HiLocationMarker
-                                    color="var(--blue)"
-                                    size={25}
-                                />
-                                <input type="text" />
-                                <button className="button">Recherche</button>
-                            </motion.div>
-
-                            <motion.div
-                                className="flexCenter stats innerWidth"
-                                initial={responsiveOffscreen}
-                                whileInView={responsiveOnscreen}
-                                variants={containerLtoR}
-                            >
-                                <div className="flexColStart stat">
-                                    <span className="count">
-                                        <CountUp
-                                            start={88800}
-                                            end={90000}
-                                            duration={4}
-                                        />
-                                        <span className="orangeText">+</span>
+                            <SlideInFromLeft scroll="on">
+                                <div className="hero-des flexColStart">
+                                    <span className="secondaryText">
+                                        Trouvez très facilement une variété de
+                                        biens immobiliers qui vous conviennent
                                     </span>
                                     <span className="secondaryText">
-                                        Premium Products
+                                        Oubliez toutes les difficultés liées à
+                                        la recherche d'une résidence pour vous
                                     </span>
                                 </div>
+                            </SlideInFromLeft>
+                            <SlideInFromLeft scroll="on">
+                                <div className="search-bar">
+                                    <HiLocationMarker
+                                        color="var(--blue)"
+                                        size={25}
+                                    />
+                                    <input type="text" />
+                                    <button className="button">
+                                        Recherche
+                                    </button>
+                                </div>
+                            </SlideInFromLeft>
+                            <SlideInFromLeft scroll="on">
+                                <div className="flexCenter stats innerWidth">
+                                    <div className="flexColStart stat">
+                                        <span className="count">
+                                            <CountUp
+                                                start={88800}
+                                                end={90000}
+                                                duration={4}
+                                            />
+                                            <span className="orangeText">
+                                                +
+                                            </span>
+                                        </span>
+                                        <span className="secondaryText">
+                                            Premium Products
+                                        </span>
+                                    </div>
 
-                                <div className="flexColStart stat">
-                                    <span className="count">
-                                        <CountUp
-                                            start={1950}
-                                            end={2000}
-                                            duration={4}
-                                        />
-                                        <span className="orangeText">+</span>
-                                    </span>
-                                    <span className="secondaryText">
-                                        Utilisateur satisfait
-                                    </span>
-                                </div>
+                                    <div className="flexColStart stat">
+                                        <span className="count">
+                                            <CountUp
+                                                start={1950}
+                                                end={2000}
+                                                duration={4}
+                                            />
+                                            <span className="orangeText">
+                                                +
+                                            </span>
+                                        </span>
+                                        <span className="secondaryText">
+                                            Utilisateur satisfait
+                                        </span>
+                                    </div>
 
-                                <div className="flexColStart stat">
-                                    <span className="count">
-                                        <CountUp end={28} />
-                                        <span className="orangeText">+</span>
-                                    </span>
-                                    <span className="secondaryText">
-                                        Prix gagné
-                                    </span>
+                                    <div className="flexColStart stat">
+                                        <span className="count">
+                                            <CountUp end={28} />
+                                            <span className="orangeText">
+                                                +
+                                            </span>
+                                        </span>
+                                        <span className="secondaryText">
+                                            Prix gagné
+                                        </span>
+                                    </div>
                                 </div>
-                            </motion.div>
+                            </SlideInFromLeft>
                         </div>
                         {/* side right */}
+
                         <div className="flexColEnd hero-right">
-                            <motion.div
-                                className="image-container"
-                                initial={responsiveOffscreen}
-                                whileInView={responsiveOnscreen}
-                                variants={containerRtoL}
-                            >
-                                <img src="./images/hero-image.png" alt="" />
-                            </motion.div>
+                            <SlideInFromRight scroll="on">
+                                <div className="image-container">
+                                    <img src="./images/hero-image.png" alt="" />
+                                </div>
+                            </SlideInFromRight>
                         </div>
                     </div>
                 </section>
             )}
-        </div>
+        </>
     );
 };
 

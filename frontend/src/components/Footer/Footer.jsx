@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../style/components/Footer.scss";
 import { motion } from "framer-motion";
 import { useIsLarge } from "../../utils/useMediaQuery";
+import { SlideInFromRight, SlideInFromLeft } from "../../utils/AnimationText";
 
 const Footer = () => {
     const isLarge = useIsLarge();
@@ -92,37 +93,40 @@ const Footer = () => {
             {show && (
                 <section className="footer-wrapper">
                     <div className="paddings innerWidth footer-container">
-                        <motion.div
-                            className="footer-left"
-                            initial={responsiveOffscreen}
-                            whileInView={responsiveOnscreen}
-                            variants={containerLtoR}
-                        >
-                            <img src="./images/logo2.png" alt="" width={120} />
-                            <span className="secondaryText">
-                                Notre vision de faire le meilleur pour les gens{" "}
-                                <br />
-                                le meilleur endroit ou vivre pour eux.
-                            </span>
-                        </motion.div>
-
-                        <motion.div
-                            className="footer-right"
-                            initial={responsiveOffscreen}
-                            whileInView={responsiveOnscreen}
-                            variants={containerRtoL}
-                        >
-                            <span className="primaryText">information</span>
-                            <span className="secondaryText">
-                                2A rue de l'Égalité, 39800, Poligny, FRANCE
-                            </span>
-                            <div className="footer-menu">
-                                <span>Propriété</span>
-                                <span>Services</span>
-                                <span>Produits</span>
-                                <span>A propos de nous</span>
+                        <SlideInFromLeft scroll="off">
+                            <div className="footer-left">
+                                <img
+                                    src="./images/logo2.png"
+                                    alt=""
+                                    width={120}
+                                />
+                                <span className="secondaryText">
+                                    Notre vision de faire le meilleur pour les
+                                    gens <br />
+                                    le meilleur endroit ou vivre pour eux.
+                                </span>
                             </div>
-                        </motion.div>
+                        </SlideInFromLeft>
+
+                        <SlideInFromRight scroll="off">
+                            <div
+                                className="footer-right"
+                                initial={responsiveOffscreen}
+                                whileInView={responsiveOnscreen}
+                                variants={containerRtoL}
+                            >
+                                <span className="primaryText">information</span>
+                                <span className="secondaryText">
+                                    2A rue de l'Égalité, 39800, Poligny, FRANCE
+                                </span>
+                                <div className="footer-menu">
+                                    <span>Propriété</span>
+                                    <span>Services</span>
+                                    <span>Produits</span>
+                                    <span>A propos de nous</span>
+                                </div>
+                            </div>
+                        </SlideInFromRight>
                     </div>
                 </section>
             )}
