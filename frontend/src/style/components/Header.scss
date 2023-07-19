@@ -21,6 +21,7 @@
   }
 }
 .header-menu {
+  z-index: 100;
   gap: 2rem;
   & > *:hover {
     cursor: pointer;

@@ -122,9 +122,11 @@
             // height: 100px;
         }
         .r-price :nth-child(1) {
-            color: orange;
+            color: $primary;
+
         }
         & :nth-child(2) {
+            color: orange;
             font-size: 1.2rem;
             font-weight: 600;
         }

@@ -64,7 +64,7 @@ const Hero = () => {
                                     </button>
                                 </div>
                             </SlideInFromLeft>
-                            <SlideInFromLeft scroll="on" duration={1.5}>
+                            <SlideInFromLeft scroll="on" >
                                 <div className="flexCenter stats innerWidth">
                                     <div className="flexColStart stat">
                                         <span className="count">
@@ -115,7 +115,7 @@ const Hero = () => {
                         {/* side right */}
 
                         <div className="flexColEnd hero-right">
-                            <SlideInFromRight scroll="on" duration={1.5}>
+                            <SlideInFromRight scroll="on">
                                 <div className="image-container">
                                     <img src="./images/hero-image.png" alt="" />
                                 </div>

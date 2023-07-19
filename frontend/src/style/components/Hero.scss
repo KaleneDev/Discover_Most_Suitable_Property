@@ -5,12 +5,10 @@
     position: relative;
     padding-bottom: 2rem;
     background-color: $color_black;
-    height: calc(100vh - 270px ) ;
     display: flex;
-
+    z-index: -100;
     .hero-container {
         display: grid;
-        // left side
         .hero-left {
             display: flex;
             gap: 3rem;
@@ -52,7 +50,6 @@
                 }
             }
         }
-        // right side
         .hero-right {
             height: 100%;
             margin-top: 4rem;
@@ -107,6 +104,9 @@
     }
 }
 @media (min-width: 1024px) {
+    .hero-wrapper {
+        min-height: calc(100vh - 270px);
+    }
     .hero-container {
         grid-template-columns: repeat(2, 1fr);
     }

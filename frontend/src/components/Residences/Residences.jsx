@@ -53,39 +53,33 @@ function Residences() {
                                 </span>
                             </SlideInFromBot>
                         </div>
-                        <div>
-                            <div className="slider">
-                                <SlideInFromBot scroll="off" duration={1.5}>
-                                    <div className="slides">
-                                        {data.map((card, i) => (
-                                            <div className="slide" key={i}>
-                                                <img src={card.image} alt="" />
-                                                <span className="secondaryText r-price">
-                                                    <span>$</span>{" "}
-                                                    <span>{card.price}</span>
-                                                </span>
-                                                <span className="primaryText">
-                                                    {card.name}
-                                                </span>
-                                                <span className="secondaryText">
-                                                    {card.detail}
-                                                </span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </SlideInFromBot>
-                            </div>
-                            <SlideInFromBot
-                                scroll="off"
-                                delay="0.3"
-                                duration={1.5}
-                            >
-                                <div className="container__btn">
-                                    <button className="prev-btn">&lt;</button>
-                                    <button className="next-btn">&gt;</button>
+                        <div className="slider">
+                            <SlideInFromBot scroll="off" duration={1.5}>
+                                <div className="slides">
+                                    {data.map((card, i) => (
+                                        <div className="slide" key={i}>
+                                            <img src={card.image} alt="" />
+                                            <span className="secondaryText r-price">
+                                                <span>{card.price}</span>
+                                                <span> €</span>{" "}
+                                            </span>
+                                            <span className="primaryText">
+                                                {card.name}
+                                            </span>
+                                            <span className="secondaryText">
+                                                {card.detail}
+                                            </span>
+                                        </div>
+                                    ))}
                                 </div>
                             </SlideInFromBot>
                         </div>
+                        <SlideInFromBot scroll="off" delay="0.3" duration={1.5}>
+                            <div className="container__btn">
+                                <button className="prev-btn">&lt;</button>
+                                <button className="next-btn">&gt;</button>
+                            </div>
+                        </SlideInFromBot>
                     </div>
                 </section>
             )}

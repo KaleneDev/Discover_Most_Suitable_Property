@@ -57,35 +57,14 @@ function Companies() {
         <div>
             {show && (
                 <section className="companies-wrapper">
-                    <SlideInFromBot scroll="off">
-                        <div
-                            className="paddings innerWidth flexCenter companies-container"
-                            initial={responsiveOffscreen}
-                            whileInView={responsiveOnscreen}
-                            variants={containerLtoR}
-                        >
-                            <motion.img
-                                variants={containerLtoR}
-                                src="./images/prologis.png"
-                                alt=""
-                            />
+                    <SlideInFromBot scroll="off" duration={1.5}>
+                        <div className="paddings innerWidth flexCenter companies-container">
+                            <img src="./images/prologis.png" alt="" />
 
-                            <motion.img
-                                variants={containerLtoR}
-                                src="./images/tower.png"
-                                alt=""
-                            />
+                            <img src="./images/tower.png" alt="" />
 
-                            <motion.img
-                                variants={containerLtoR}
-                                src="./images/equinix.png"
-                                alt=""
-                            />
-                            <motion.img
-                                variants={containerLtoR}
-                                src="./images/realty.png"
-                                alt=""
-                            />
+                            <img src="./images/equinix.png" alt="" />
+                            <img src="./images/realty.png" alt="" />
                         </div>
                     </SlideInFromBot>
                 </section>
