@@ -2,15 +2,22 @@
 
 .footer-container {
   display: grid;
-  justify-content: center;
+  // justify-content: center;
   gap: 2rem;
+  & > div {
+    width: 100%;
+
+  }
   .footer-left {
     display: grid;
+    width: 100%;
   }
   .footer-right {
     display: grid;
+    width: 100%;
     .footer-menu {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(5rem, auto));
       gap: 1rem;
       margin-top: 1rem;
       font-weight: 500;
