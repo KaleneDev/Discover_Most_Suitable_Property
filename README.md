@@ -1,12 +1,6 @@
 # Discover_Most_Suitable_Property
 Discover_Most_Suitable_Property is a project aimed at helping users find the most suitable property for their needs and preferences. It provides a platform for exploring various properties, comparing their features, and making informed decisions. This README file provides an overview of the project and instructions on how to use it.
 
-### Features
-- Property Listings: Browse through a wide range of property listings, including houses, apartments, and commercial spaces.
-- Filtering and Sorting: Use filters to narrow down the search based on criteria such as location, price, size, and amenities. Sort the listings by relevance, price, or other factors.
-- Property Details: View detailed information about each property, including descriptions, images, floor plans, and contact information.
-- Comparisons: Select multiple properties to compare their features side by side, making it easier to evaluate and choose the most suitable option.
-- Contact and Inquiry: Connect with property owners or agents directly through the platform to ask questions or arrange viewings.
 ### Installation
 To run the Discover_Most_Suitable_Property project locally, follow these steps:
 
