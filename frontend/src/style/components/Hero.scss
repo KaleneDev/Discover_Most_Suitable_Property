@@ -12,6 +12,7 @@
         .hero-left {
             display: flex;
             gap: 3rem;
+
             .hero-title {
                 position: relative;
                 z-index: 100;
@@ -23,6 +24,11 @@
             }
             .secondaryText {
                 font-size: 1.2rem;
+                line-height: 2rem;
+                margin-top: 1rem;
+            }
+            .secondaryText.block {
+                font-size: 1.1rem;
                 line-height: 2rem;
                 margin-top: 1rem;
             }
@@ -96,6 +102,7 @@
     .hero-left {
         display: flex;
         gap: 3rem;
+     
         .hero-title {
             h1 {
                 font-size: 3.8rem;

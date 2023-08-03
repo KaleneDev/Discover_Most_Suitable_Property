@@ -77,7 +77,7 @@ const Hero = () => {
                                                 +
                                             </span>
                                         </span>
-                                        <span className="secondaryText">
+                                        <span className="secondaryText block">
                                             Premium Products
                                         </span>
                                     </div>
@@ -93,7 +93,7 @@ const Hero = () => {
                                                 +
                                             </span>
                                         </span>
-                                        <span className="secondaryText">
+                                        <span className="secondaryText block">
                                             Utilisateur satisfait
                                         </span>
                                     </div>
@@ -105,7 +105,7 @@ const Hero = () => {
                                                 +
                                             </span>
                                         </span>
-                                        <span className="secondaryText">
+                                        <span className="secondaryText block">
                                             Prix gagné
                                         </span>
                                     </div>
